@@ -1,0 +1,56 @@
+# Sensitive key files - NEVER distribute
+*.keys
+prod.keys
+title.keys
+
+# Bundled portable runtime (large, redistributable, and contains
+# keys.txt / titlekeys.txt key material - never commit)
+/bin/
+/bin_nsz_4.6.1_backup/
+/bin_py3.10.5_nsz5.0.0_backup/
+
+# Windows shortcuts (machine-specific absolute paths)
+*.lnk
+
+# Switch game dumps - should never live in the repo
+*.nsp
+*.nsz
+*.xci
+*.nca
+
+# User data
+/logs/
+/output/
+/temp/
+/config/settings.json
+
+# Python cache
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+*.so
+*.egg
+*.egg-info/
+dist/
+build/
+.pytest_cache/
+
+# Local pytest install for running the test suite via bin/python.exe
+# (kept out of bin/ itself so the redistributable stays slim - see
+# bin/Lib/site-packages/_dev_test_deps.pth, which is also local-only)
+/.dev-test-deps/
+
+# IDE
+.vscode/
+.idea/
+.claude/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini
